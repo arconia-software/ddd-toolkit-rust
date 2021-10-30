@@ -1,0 +1,10 @@
+[package]
+name = "ddd_toolkit"
+version = "0.1.1"
+edition = "2021"
+authors = ["D. Schilder <ds@dlds.de>"]
+license = "Apple MIT License (AML)"
+
+[dev-dependencies]
+chrono = "0.4.19"
+uuid = { version = "0.8.2", features = ["serde", "v4"] }
