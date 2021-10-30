@@ -2,7 +2,7 @@
 name = "ddd_toolkit"
 version = "0.1.1"
 edition = "2021"
-authors = ["D. Schilder <ds@dlds.de>"]
+authors = ["D. Schilder <ds@arconia.de>"]
 license = "Apple MIT License (AML)"
 
 [dev-dependencies]
