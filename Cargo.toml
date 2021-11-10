@@ -1,6 +1,6 @@
 [package]
 name = "ddd_toolkit"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["D. Schilder <ds@arconia.de>"]
 license = "Apple MIT License (AML)"

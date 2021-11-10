@@ -1,10 +1,10 @@
-mod util;
+mod mocks;
 
 #[cfg(test)]
 mod tests {
-    use ddd_toolkit::building_blocks::domain_entity::DomainEntity;
-    use ddd_toolkit::building_blocks::domain_identity::DomainIdentity;
-    use crate::util::entity::{MyDomainId, MyEntity, MyEntityProps};
+    use ddd_toolkit::building_blocks::domain::entity::Entity;
+    use ddd_toolkit::building_blocks::domain::identity::DomainIdentity;
+    use aggregate_root_tests::entity::{MyDomainId, MyEntity, MyEntityProps};
 
     #[test]
     fn it_creates_is_created_by_new() {

@@ -1,4 +1,4 @@
-pub trait DomainEvent {
+pub trait Event {
     type DateTime;
     type PublisherId;
     type Payload;

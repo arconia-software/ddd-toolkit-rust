@@ -1,4 +1,4 @@
-pub trait DomainValueObject<PropsType: Eq> {
+pub trait ValueObject<PropsType: Eq> {
     /// Value objects should always be non-mutable. Instead of changing the state of the value
     /// object, it should be replaced by a new instance. Complex value objects should be created
     /// using an assembler, builder or essence pattern.
@@ -12,12 +12,12 @@ pub trait DomainValueObject<PropsType: Eq> {
     /// A value object is an object whose value is significant. This means that two value objects
     /// with exactly the same value can be considered the same value object and are therefore
     /// interchangeable.
-    fn equals(&self, other: impl DomainValueObject<PropsType>) -> bool;
+    fn equals(&self, other: impl ValueObject<PropsType>) -> bool;
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::building_blocks::domain_value_object::DomainValueObject;
+    use crate::building_blocks::domain::value_object::ValueObject;
 
     #[derive(Debug, Eq, PartialEq, Clone)]
     struct SomeValueObjectProps {
@@ -29,14 +29,14 @@ mod tests {
         props: SomeValueObjectProps,
     }
 
-    impl DomainValueObject<SomeValueObjectProps> for SomeValueObject {
+    impl ValueObject<SomeValueObjectProps> for SomeValueObject {
         fn new(props: SomeValueObjectProps) -> Self {
             SomeValueObject { props }
         }
         fn get_props(&self) -> SomeValueObjectProps {
             self.props.clone()
         }
-        fn equals(&self, other: impl DomainValueObject<SomeValueObjectProps>) -> bool {
+        fn equals(&self, other: impl ValueObject<SomeValueObjectProps>) -> bool {
             self.props == other.get_props()
         }
     }

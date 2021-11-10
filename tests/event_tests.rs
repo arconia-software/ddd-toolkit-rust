@@ -1,12 +1,12 @@
-mod util;
+mod mocks;
 
 #[cfg(test)]
 mod tests {
-    use ddd_toolkit::building_blocks::domain_entity::DomainEntity;
-    use ddd_toolkit::building_blocks::domain_event::DomainEvent;
-    use ddd_toolkit::building_blocks::domain_identity::DomainIdentity;
-    use crate::util::entity::{MyDomainId, MyEntity, MyEntityProps};
-    use crate::util::event::{MyEvent, MyDomainEvent, MyDomainEventPayload, MyOtherDomainEvent, MyOtherDomainEventPayload};
+    use ddd_toolkit::building_blocks::domain::entity::Entity;
+    use ddd_toolkit::building_blocks::domain::event::Event;
+    use ddd_toolkit::building_blocks::domain::identity::DomainIdentity;
+    use aggregate_root_tests::entity::{MyDomainId, MyEntity, MyEntityProps};
+    use ddd_toolkit::examples::event::{MyEvent, MyDomainEvent, MyDomainEventPayload, MyOtherDomainEvent, MyOtherDomainEventPayload};
 
     fn create_entity() -> MyEntity {
         let id = MyDomainId::new();
